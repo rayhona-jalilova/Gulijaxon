@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buyurtma – Gulijaxon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1 id="page-title" data-uz="GULIJAXON" data-ru="ГУЛИДЖАХОН">GULIJAXON</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+          <li><a href="courses.html" data-uz="Kurslar" data-ru="Курсы">Kurslar</a></li>
+          <li><a href="order.html" data-uz="Buyurtma" data-ru="Заказ">Buyurtma</a></li>
+          <li><a href="register.html" data-uz="Ro'yxatdan o'tish" data-ru="Регистрация">Ro'yxatdan o'tish</a></li>
+          <li><a href="login.html" data-uz="Kirish" data-ru="Вход">Kirish</a></li>
+        </ul>
+      </nav>
+      <!-- Tilni tanlash -->
+      <div class="language-selector">
+        <label for="language" data-uz="Til:" data-ru="Язык:">Til: </label>
+        <select id="language" onchange="changeLanguage()">
+          <option value="uz">O'zbekcha</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="orders">
+    <!-- Kiyim Tikish Buyurtmasi -->
+    <section class="order-form">
+      <h2 id="order-title" data-uz="Kiyim Tikish Buyurtmasi" data-ru="Заказ на пошив одежды">Kiyim Tikish Buyurtmasi</h2>
+      <form>
+        <label data-uz="Ismingiz:" data-ru="Ваше имя:">Ismingiz:</label>
+        <input type="text" id="name" placeholder="Ismingizni kiriting" required />
+
+        <label data-uz="Telefon raqamingiz:" data-ru="Ваш номер телефона:">Telefon raqamingiz:</label>
+        <input type="tel" id="phone" placeholder="+998 90 123 45 67" required />
+
+        <label data-uz="Kiyim turi:" data-ru="Тип одежды:">Kiyim turi:</label>
+        <input type="text" id="clothing-type" placeholder="Masalan: milliy libos, kostyum..." required />
+
+        <label data-uz="Izoh:" data-ru="Комментарий:">Izoh:</label>
+        <textarea id="comment" placeholder="Oʻlchamlar, mato turi va boshqa tafsilotlar"></textarea>
+
+        <button type="submit" data-uz="Buyurtma berish" data-ru="Сделать заказ">Buyurtma berish</button>
+      </form>
+    </section>
+
+    <!-- Taom Buyurtmasi -->
+    <section class="order-form">
+      <h2 id="food-order-title" data-uz="Taom Buyurtmasi" data-ru="Заказ еды">Taom Buyurtmasi</h2>
+      <form>
+        <label data-uz="Ismingiz:" data-ru="Ваше имя:">Ismingiz:</label>
+        <input type="text" id="food-name" placeholder="Ismingizni kiriting" required />
+
+        <label data-uz="Telefon raqamingiz:" data-ru="Ваш номер телефона:">Telefon raqamingiz:</label>
+        <input type="tel" id="food-phone" placeholder="+998 90 123 45 67" required />
+
+        <label data-uz="Taom nomi:" data-ru="Название блюда:">Taom nomi:</label>
+        <input type="text" id="food-name" placeholder="Masalan: palov, somsa..." required />
+
+        <label data-uz="Yetkazish manzili:" data-ru="Адрес доставки:">Yetkazish manzili:</label>
+        <textarea id="delivery-address" placeholder="Toshkent shahar, Chilonzor tumani, ..." required></textarea>
+
+        <button type="submit" data-uz="Buyurtma berish" data-ru="Сделать заказ">Buyurtma berish</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="footer-text" data-uz="&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan." data-ru="&copy; 2025 Gulijaxon. Все права защищены.">&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById('language').value;
+
+      // Loop through elements that have data-uz and data-ru attributes
+      const elements = document.querySelectorAll('[data-uz], [data-ru]');
+      elements.forEach(element => {
+        const uzText = element.getAttribute('data-uz');
+        const ruText = element.getAttribute('data-ru');
+
+        // Set the text content based on the selected language
+        if (language === 'ru') {
+          element.textContent = ruText || element.textContent;
+          if (element.placeholder) element.placeholder = element.getAttribute('data-ru') || element.placeholder;
+        } else {
+          element.textContent = uzText || element.textContent;
+          if (element.placeholder) element.placeholder = element.getAttribute('data-uz') || element.placeholder;
+        }
+      });
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

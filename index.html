@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gulijaxon – Tikuv & Oshpazlik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1 id="header-title" data-uz="GULIJAXON" data-ru="ГУЛИДЖАХОН">GULIJAXON</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active" id="home-link" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+          <li><a href="courses.html" id="courses-link" data-uz="Kurslar" data-ru="Курсы">Kurslar</a></li>
+          <li><a href="order.html" id="order-link" data-uz="Buyurtma" data-ru="Заказ">Buyurtma</a></li>
+          <li><a href="register.html" id="register-link" data-uz="Ro'yxatdan o'tish" data-ru="Регистрация">Ro'yxatdan o'tish</a></li>
+          <li><a href="login.html" id="login-link" data-uz="Kirish" data-ru="Вход">Kirish</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        <select id="language" onchange="changeLanguage()">
+          <option value="uz">O'zbek</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2 id="hero-heading" data-uz="Zamonaviy Tikuvchilik va Oshpazlik Xizmati" data-ru="Современные курсы шитья и кулинарии">Zamonaviy Tikuvchilik va Oshpazlik Xizmati</h2>
+      <p id="hero-description" data-uz="Kurslarga yoziling yoki bizning xizmatlarimizdan foydalaning. Eng sifatli va tezkor xizmatlar shu yerda!" data-ru="Запишитесь на курсы или воспользуйтесь нашими услугами. Высококачественные и быстрые услуги здесь!">Kurslarga yoziling yoki bizning xizmatlarimizdan foydalaning. Eng sifatli va tezkor xizmatlar shu yerda!</p>
+      <a href="courses.html" class="btn" id="view-courses-btn" data-uz="Kurslarimizni ko‘rish" data-ru="Посмотреть курсы">Kurslarimizni ko‘rish</a>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <div class="feature">
+      <h3>👗 <span id="feature-1" data-uz="Tikuvchilik Kurslari" data-ru="Курсы шитья">Tikuvchilik Kurslari</span></h3>
+      <p id="feature-1-text" data-uz="Professional tikuvchilikni 0 dan o‘rganing. Amaliy mashg‘ulotlar va dizayn darslari." data-ru="Изучайте профессиональное шитье с нуля. Практические занятия и уроки дизайна.">Professional tikuvchilikni 0 dan o‘rganing. Amaliy mashg‘ulotlar va dizayn darslari.</p>
+    </div>
+    <div class="feature">
+      <h3>👨‍🍳 <span id="feature-2" data-uz="Oshpazlik Darslari" data-ru="Кулинарные курсы">Oshpazlik Darslari</span></h3>
+      <p id="feature-2-text" data-uz="Milliy hamda xorijiy taomlar bo‘yicha tajribali ustozlar bilan o‘qing." data-ru="Учите национальные и зарубежные блюда с опытными преподавателями.">Milliy hamda xorijiy taomlar bo‘yicha tajribali ustozlar bilan o‘qing.</p>
+    </div>
+    <div class="feature">
+      <h3>🚚 <span id="feature-3" data-uz="Yetkazib Berish" data-ru="Доставка">Yetkazib Berish</span></h3>
+      <p id="feature-3-text" data-uz="Oshxonamizdan sizga issiq taomlarni tez va xavfsiz yetkazamiz." data-ru="Мы быстро и безопасно доставляем горячие блюда из нашей кухни.">Oshxonamizdan sizga issiq taomlarni tez va xavfsiz yetkazamiz.</p>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL INFO -->
+  <section class="additional-info">
+    <h2 id="additional-info-title" data-uz="Bizning xizmatlarimiz haqida" data-ru="О наших услугах">Bizning xizmatlarimiz haqida</h2>
+    <p id="additional-info-text" data-uz="Gulijaxon kurslari nafaqat o‘rganish, balki amaliy mashg‘ulotlar va interaktiv muhitda o‘rganish imkoniyatlarini ham taklif etadi. Shuningdek, bizning oshpazlarimiz taomlarning eng yaxshi sifatini ta'minlashadi." data-ru="Курсы Gulijaxon предлагают не только обучение, но и практические занятия, а также возможность учиться в интерактивной среде. Наши повара гарантируют высокое качество блюд.">Gulijaxon kurslari nafaqat o‘rganish, balki amaliy mashg‘ulotlar va interaktiv muhitda o‘rganish imkoniyatlarini ham taklif etadi. Shuningdek, bizning oshpazlarimiz taomlarning eng yaxshi sifatini ta'minlashadi.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-uz="&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan." data-ru="&copy; 2025 Gulijaxon. Все права защищены.">&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById('language').value;
+      const elements = document.querySelectorAll('[data-uz], [data-ru]');
+
+      elements.forEach(element => {
+        const uzText = element.getAttribute('data-uz');
+        const ruText = element.getAttribute('data-ru');
+
+        if (language === 'ru') {
+          element.textContent = ruText || element.textContent;
+        } else {
+          element.textContent = uzText || element.textContent;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

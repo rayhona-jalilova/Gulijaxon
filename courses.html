@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurslar – Gulijaxon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1 id="page-title" data-uz="GULIJAXON" data-ru="ГУЛИДЖАХОН">GULIJAXON</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+          <li><a href="courses.html" data-uz="Kurslar" data-ru="Курсы">Kurslar</a></li>
+          <li><a href="order.html" data-uz="Buyurtma" data-ru="Заказ">Buyurtma</a></li>
+          <li><a href="register.html" data-uz="Ro'yxatdan o'tish" data-ru="Регистрация">Ro'yxatdan o'tish</a></li>
+          <li><a href="login.html" data-uz="Kirish" data-ru="Вход">Kirish</a></li>
+        </ul>
+      </nav>
+
+      <!-- Tilni tanlash -->
+      <div class="language-selector">
+        <label for="language" data-uz="Til:" data-ru="Язык:">Til: </label>
+        <select id="language" onchange="changeLanguage()">
+          <option value="uz">O'zbekcha</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="courses">
+      <h2 id="courses-title" data-uz="Kurslarimiz" data-ru="Наши курсы">Kurslarimiz</h2>
+      <ul>
+        <li id="course-1" data-uz="Kiyim tikish kursi" data-ru="Курс по пошиву одежды">Kiyim tikish kursi</li>
+        <li id="course-2" data-uz="Oshpazlik kursi" data-ru="Кулинарный курс">Oshpazlik kursi</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="footer-text" data-uz="&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan." data-ru="&copy; 2025 Gulijaxon. Все права защищены.">&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById('language').value;
+
+      // Loop through elements with data-uz and data-ru attributes
+      const elements = document.querySelectorAll('[data-uz], [data-ru]');
+      elements.forEach(element => {
+        const uzText = element.getAttribute('data-uz');
+        const ruText = element.getAttribute('data-ru');
+
+        // Set the text content based on the selected language
+        if (language === 'ru') {
+          element.textContent = ruText || element.textContent;
+        } else {
+          element.textContent = uzText || element.textContent;
+        }
+      });
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <style>
+    body {
+      background-image: url('photo_ai.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kirish – Gulijaxon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1 id="page-title">GULIJAXON</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" id="home-link">Bosh sahifa</a></li>
+          <li><a href="courses.html" id="courses-link">Kurslar</a></li>
+          <li><a href="order.html" id="order-link">Buyurtma</a></li>
+          <li><a href="register.html" id="register-link">Ro'yxatdan o'tish</a></li>
+          <li><a href="login.html" class="active" id="login-link">Kirish</a></li>
+        </ul>
+      </nav>
+      <!-- Tilni tanlash -->
+      <div class="language-selector">
+        <label for="language">Til: </label>
+        <select id="language" onchange="changeLanguage()">
+          <option value="uz">O'zbekcha</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="login">
+    <section class="login-form">
+      <h2 id="login-title">Kirish</h2>
+      <form action="#" method="POST">
+        <label id="email-label">Elektron pochta:</label>
+        <input type="email" id="email" placeholder="Email manzilingizni kiriting" required />
+
+        <label id="password-label">Parol:</label>
+        <input type="password" id="password" placeholder="Parolingizni kiriting" required />
+
+        <button type="submit" id="submit-btn">Kirish</button>
+      </form>
+      <p id="register-link-text">Hali ro'yxatdan o'tmagansizmi? <a href="register.html" id="register-link">Ro'yxatdan o'ting</a></p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="footer-text">&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById('language').value;
+
+      if (language === 'ru') {
+        document.getElementById('page-title').textContent = 'ГУЛИДЖАХОН';
+        document.getElementById('home-link').textContent = 'Главная страница';
+        document.getElementById('courses-link').textContent = 'Курсы';
+        document.getElementById('order-link').textContent = 'Заказ';
+        document.getElementById('register-link').textContent = 'Регистрация';
+        document.getElementById('login-link').textContent = 'Войти';
+
+        document.getElementById('login-title').textContent = 'Войти';
+        document.getElementById('email-label').textContent = 'Электронная почта:';
+        document.getElementById('password-label').textContent = 'Пароль:';
+        document.getElementById('submit-btn').textContent = 'Войти';
+        document.getElementById('register-link-text').innerHTML = 'Еще не зарегистрированы? <a href="register.html" id="register-link">Зарегистрироваться</a>';
+        document.getElementById('footer-text').textContent = '&copy; 2025 Gulijaxon. Все права защищены.';
+
+        // Update placeholders for Russian
+        document.getElementById('email').placeholder = 'Введите ваш email';
+        document.getElementById('password').placeholder = 'Введите ваш пароль';
+      } else {
+        document.getElementById('page-title').textContent = 'GULIJAXON';
+        document.getElementById('home-link').textContent = 'Bosh sahifa';
+        document.getElementById('courses-link').textContent = 'Kurslar';
+        document.getElementById('order-link').textContent = 'Buyurtma';
+        document.getElementById('register-link').textContent = 'Ro\'yxatdan o\'tish';
+        document.getElementById('login-link').textContent = 'Kirish';
+
+        document.getElementById('login-title').textContent = 'Kirish';
+        document.getElementById('email-label').textContent = 'Elektron pochta:';
+        document.getElementById('password-label').textContent = 'Parol:';
+        document.getElementById('submit-btn').textContent = 'Kirish';
+        document.getElementById('register-link-text').innerHTML = 'Hali ro\'yxatdan o\'tmagansizmi? <a href="register.html" id="register-link">Ro\'yxatdan o\'ting</a>';
+        document.getElementById('footer-text').textContent = '&copy; 2025 Gulijaxon. Barcha huquqlar himoyalangan.';
+
+        // Update placeholders for Uzbek
+        document.getElementById('email').placeholder = 'Email manzilingizni kiriting';
+        document.getElementById('password').placeholder = 'Parolingizni kiriting';
+      }
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
